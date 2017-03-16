@@ -7,8 +7,8 @@ package sort;
  *
  */
 public class MergeSort {
-	public int[] mergeSort(int[] A, int n) {
-		sort(A, 0, n - 1);
+	public int[] mergeSort(int[] A) {
+		sort(A, 0, A.length - 1);
 		return A;
 	}
 
