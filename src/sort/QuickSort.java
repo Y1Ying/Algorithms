@@ -8,42 +8,34 @@ package sort;
  */
 public class QuickSort {
 
-	public static int[] quickSort(int[] A) {
-		quick(A, 0, A.length - 1);
-		return A;
+	public static void quickSort(int[] arr) {
+		qsort(arr, 0, arr.length - 1);
 	}
 
-	private static int[] quick(int[] A, int low, int high) {
+	private static void qsort(int[] arr, int low, int high) {
 		if (low < high) {
-			int mid = sort(A, low, high);
-			quick(A, low, mid - 1);
-			quick(A, mid + 1, high);
+			int pivot = partition(arr, low, high); // 将数组分为两部分
+			qsort(arr, low, pivot - 1); // 递归排序左子数组
+			qsort(arr, pivot + 1, high); // 递归排序右子数组
 		}
-		return A;
 	}
 
-	private static int sort(int[] A, int low, int high) {
-		int key = A[low];
-		int i = low;
-		int j = high;
-		if (low < high) {
-			while (i < j) {
-				while (i < j && key <= A[j]) {
-					j--;
-				}
-				if (i < j) {
-					A[i] = A[j];
-				}
-				while (i < j && A[i] <= key) {
-					i++;
-				}
-				if (i < j) {
-					A[j] = A[i];
-				}
+	private static int partition(int[] arr, int low, int high) {
+		int pivot = arr[low]; // 枢轴记录
+		while (low < high) {
+			while (low < high && arr[high] >= pivot) {
+				--high;
 			}
-			A[i] = key;
+			arr[low] = arr[high]; // 交换比枢轴小的记录到左端
+			while (low < high && arr[low] <= pivot) {
+				++low;
+			}
+			arr[high] = arr[low]; // 交换比枢轴小的记录到右端
 		}
-		return i;
+		// 扫描完成，枢轴到位
+		arr[low] = pivot;
+		// 返回的是枢轴的位置
+		return low;
 	}
 
 	public static void main(String[] args) {

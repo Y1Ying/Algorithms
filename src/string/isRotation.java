@@ -16,4 +16,13 @@ public class isRotation {
 		String b2 = b + b;
 		return KMP.getIndexOf(b2, a) != -1;// 使用KMP算法
 	}
+
+	// 第二种方法 给定两个字符串A和B及他们的长度lena，lenb，请返回一个bool值，代表他们是否互为旋转词。
+	public boolean chkRotation(String A, int lena, String B, int lenb) {
+		if (lena != lenb) {
+			return false;
+		}
+		String C = A + A;
+		return C.contains(B);
+	}
 }

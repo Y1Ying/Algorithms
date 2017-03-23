@@ -8,7 +8,7 @@ package sort;
  */
 public class SelectionSort {
 
-	public int[] selectSort(int[] a) {
+	public static int[] selectSort(int[] a) {
 		for (int i = 0; i < a.length; i++) {
 			int min = a[i];
 			for (int j = i + 1; j < a.length; j++) {
@@ -21,5 +21,15 @@ public class SelectionSort {
 			a[i] = min;
 		}
 		return a;
+	}
+
+	public static void main(String[] args) {
+		int[] a = { 4, 2, 1, 6, 3, 6, 0, 5, 1, 1 };
+		int i;
+		selectSort(a);
+		for (int j = 0; j < 10; j++) {
+			System.out.printf("%d", a[j]);
+
+		}
 	}
 }
