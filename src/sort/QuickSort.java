@@ -23,6 +23,7 @@ public class QuickSort {
 	private static int partition(int[] arr, int low, int high) {
 		int pivot = arr[low]; // 枢轴记录
 		while (low < high) {
+			// 从右往左遍历
 			while (low < high && arr[high] >= pivot) {
 				--high;
 			}
@@ -30,7 +31,7 @@ public class QuickSort {
 			while (low < high && arr[low] <= pivot) {
 				++low;
 			}
-			arr[high] = arr[low]; // 交换比枢轴小的记录到右端
+			arr[high] = arr[low]; // 交换比枢轴大的记录到右端
 		}
 		// 扫描完成，枢轴到位
 		arr[low] = pivot;
