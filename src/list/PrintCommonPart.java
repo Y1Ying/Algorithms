@@ -6,18 +6,20 @@ package list;
  * @author dell
  *
  */
-public class Node {
+public class PrintCommonPart {
 
 	// 由于是有序链表，所以两个链表的头开始进行：
 	// 如果head1的值小于head2,则head1往下移动
 	// 如果head2的值小于head1,则head2往下移动
 	// 如果相等，打印这个值，两个一起往下移动，直到有一个移动到Null
 
-	public int value;
-	public Node next;
+	public static class Node {
+		public int value;
+		public Node next;
 
-	public Node(int data) {
-		this.value = data;
+		public Node(int data) {
+			this.value = data;
+		}
 	}
 
 	public void printCommonPart(Node head1, Node head2) {
