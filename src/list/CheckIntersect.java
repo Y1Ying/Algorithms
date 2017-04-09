@@ -102,6 +102,7 @@ public class CheckIntersect {
 			n--;
 			cur2 = cur2.next;
 		}
+		// 走到最后 如果最后的节点不相等，则他们没有相交
 		if (cur1 != cur2) {
 			return null;
 		}
@@ -152,10 +153,12 @@ public class CheckIntersect {
 	public Node bothLoop(Node head1, Node loop1, Node head2, Node loop2) {
 		Node cur1 = null;
 		Node cur2 = null;
+		// 在环之前相交
 		if (loop1 == loop2) {
 			cur1 = head1;
 			cur2 = head2;
 			int n = 0;
+			// 将loop作为终点
 			while (cur1 != loop1) {
 				n++;
 				cur1 = cur1.next;
@@ -177,6 +180,7 @@ public class CheckIntersect {
 			}
 			return cur1;
 		} else {
+			// loop1 != loop2
 			cur1 = loop1;
 			while (cur1 != loop1) {
 				if (cur1 == loop2) {
