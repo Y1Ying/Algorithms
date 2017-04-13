@@ -1,4 +1,5 @@
 package binaryTree;
+
 /**
  * 有一棵二叉树，请设计一个算法，按照层次打印这棵二叉树。
 	给定二叉树的根结点root，请返回打印结果，结果按照每一层一个数组进行储存，所有数组的顺序按照层数从上往下，
@@ -8,29 +9,31 @@ package binaryTree;
  */
 import java.util.ArrayList;
 import java.util.LinkedList;
+
 public class TreePrinter {
 
-	public class TreeNode {
+	public class Node {
 		int val = 0;
-		TreeNode left = null;
-		TreeNode right = null;
-		public TreeNode(int val) {
+		Node left = null;
+		Node right = null;
+
+		public Node(int val) {
 			this.val = val;
 		}
 	}
 
-	public int[][] printTree(TreeNode root) {
+	public int[][] printTree(Node root) {
 		if (root == null) {
 			return null;
 		}
-		LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+		LinkedList<Node> queue = new LinkedList<Node>();
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		ArrayList<ArrayList<Integer>> layer = new ArrayList<ArrayList<Integer>>();
-		TreeNode last = root;
-		TreeNode nlast = null;
+		Node last = root;
+		Node nlast = null;
 		queue.add(root);
 		while (!queue.isEmpty()) {
-			TreeNode temp = queue.poll();// 出队，将孩子添加进去
+			Node temp = queue.poll();// 出队，将孩子添加进去
 			arr.add(temp.val);
 			if (temp.left != null) {
 				queue.add(temp.left);// 每入队一个节点，就更新nlast
