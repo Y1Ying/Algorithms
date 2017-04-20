@@ -8,7 +8,7 @@ package sort;
  *
  */
 public class Merge {
-	public int[] mergeAB(int[] A, int[] B) {
+	public static int[] mergeAB(int[] A, int[] B) {
 		int index = A.length + B.length - 1;
 		int i = A.length - 1;
 		int j = B.length - 1;

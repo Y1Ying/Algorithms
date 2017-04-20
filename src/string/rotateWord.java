@@ -40,6 +40,23 @@ public class rotateWord {
 		}
 	}
 
+	public String reverseSentence(String A, int n) {
+		int lo = 0, hi = 0;
+		char[] cs = A.toCharArray();
+		reverse(cs, 0, n - 1);
+		for (int i = 0; i < n; i++) {
+			if (cs[i] == ' ') {
+				reverse(cs, lo, hi - 1);
+				hi++;
+				lo = hi;
+			} else {
+				hi++;
+			}
+		}
+		reverse(cs, lo, hi - 1);
+		return String.valueOf(cs);
+	}
+
 	/**
 	 * 给定一个字符串类型的数组chas和一个整数size,把大小为size的左半区整体移到右半区，右半区整体移到左半区
 	 * 1.将chas[a...size-1]部分逆序 2.将chas[size..N-1]部分逆序 3.再整体逆序

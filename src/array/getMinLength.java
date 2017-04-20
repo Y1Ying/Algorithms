@@ -7,31 +7,38 @@ package array;
  *
  */
 public class getMinLength {
-	public int getMinLength(int[] arr) {
-		if (arr == null || arr.length < 2) {
+	public int getMinLength(int[] A) {
+		if (A == null || A.length < 2) {
 			return 0;
 		}
-		// 从右往左找到最小
-		int min = arr[arr.length - 1];
-		int noMinIndex = -1;
-		for (int i = arr.length - 2; i != -1; i--) {
-			if (arr[i] > min) {
-				noMinIndex = i;
-			} else {
-				min = Math.min(arr[i], min);
-			}
-		}
-		// 从左往右找最大
-		int max = arr[0];
-		int noMaxIndex = -1;
-		for (int j = 1; j != arr.length; j++) {
-			if (arr[j] < max) {
+
+		int max = A[0];
+		int min = A[A.length - 1];
+		int noMaxIndex = 0;
+		int noMinIndex = 0;
+
+		// 从左往右找最大 遍历过的最大值比当前数大的时候记录，得到发生这种情况最右的位置
+
+		for (int j = 0; j < A.length; j++) {
+			if (A[j] < max) {
 				noMaxIndex = j;
-			} else {
-				max = Math.max(arr[j], max);
+			} else if (A[j] > max) {
+				max = A[j];
 			}
 		}
-		return noMaxIndex - noMinIndex + 1;
+		// 从右往左找到最小，遍历过的最小值比当前数小的时候记录，得到发生这种情况最左的位置
+		for (int i = A.length - 1; i >= 0; i--) {
+			if (A[i] > min) {
+				noMinIndex = i;
+			} else if (A[i] < min) {
+				min = A[i];
+			}
+		}
+		if (noMaxIndex - noMinIndex == 0) {
+			return 0;
+		} else {
+			return noMaxIndex - noMinIndex + 1;
+		}
 	}
 
 }
