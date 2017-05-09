@@ -26,4 +26,5 @@ public class CombineByMistake {
 		}
 		return (int) arr[n];
 	}
+
 }
