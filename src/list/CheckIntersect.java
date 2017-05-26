@@ -6,10 +6,10 @@ public class CheckIntersect {
 
 	public static class Node {
 		Node next;
-		int val;
+		int value;
 
 		public Node(int data) {
-			this.val = data;
+			this.value = data;
 		}
 	}
 
@@ -60,22 +60,16 @@ public class CheckIntersect {
 		}
 		return false;
 	}
-
-	public static void main(String[] args) {
-		Node n1 = new Node(1);
-		Node n2 = new Node(2);
-		Node n3 = new Node(3);
-		Node n4 = new Node(4);
-		Node n5 = new Node(5);
-
-		n1.next = n2;
-		n2.next = n3;
-		n3.next = n4;
-		n4.next = n5;
-		// n5.next = n1; // 构造一个带环的链表,去除此句表示不带环
-
-		System.out.println(getLoopNode(n1));
-	}
+	/*
+	 * public static void main(String[] args) { Node n1 = new Node(1); Node n2 =
+	 * new Node(2); Node n3 = new Node(3); Node n4 = new Node(4); Node n5 = new
+	 * Node(5);
+	 * 
+	 * n1.next = n2; n2.next = n3; n3.next = n4; n4.next = n5; // n5.next = n1;
+	 * // 构造一个带环的链表,去除此句表示不带环
+	 * 
+	 * System.out.println(getLoopNode(n1)); }
+	 */
 
 	/**
 	 * * 现在有两个无环单链表，若两个链表的长度分别为m和n，
@@ -87,7 +81,7 @@ public class CheckIntersect {
 	 * @return
 	 */
 
-	public Node noLoop(Node head1, Node head2) {
+	public static Node noLoop(Node head1, Node head2) {
 		if (head1 == null || head2 == null) {
 			return null;
 		}
@@ -150,7 +144,7 @@ public class CheckIntersect {
 	 * @param loop2
 	 */
 
-	public Node bothLoop(Node head1, Node loop1, Node head2, Node loop2) {
+	public static Node bothLoop(Node head1, Node loop1, Node head2, Node loop2) {
 		Node cur1 = null;
 		Node cur2 = null;
 		// 在环之前相交
@@ -197,7 +191,7 @@ public class CheckIntersect {
 	 * 给定两个单链表的头节点head1和head2，如何判断两个链表是否相交？
 	 */
 
-	public Node getIntersectNode(Node head1, Node head2) {
+	public static Node getIntersectNode(Node head1, Node head2) {
 		if (head1 == null || head2 == null) {
 			return null;
 		}
@@ -210,6 +204,49 @@ public class CheckIntersect {
 			return bothLoop(head1, loop1, head2, loop2);
 		}
 		return null;
+
+	}
+
+	public static void main(String[] args) {
+		// 1->2->3->4->5->6->7->null
+		Node head1 = new Node(1);
+		head1.next = new Node(2);
+		head1.next.next = new Node(3);
+		head1.next.next.next = new Node(4);
+		head1.next.next.next.next = new Node(5);
+		head1.next.next.next.next.next = new Node(6);
+		head1.next.next.next.next.next.next = new Node(7);
+
+		// 0->9->8->6->7->null
+		Node head2 = new Node(0);
+		head2.next = new Node(9);
+		head2.next.next = new Node(8);
+		head2.next.next.next = head1.next.next.next.next.next; // 8->6
+		System.out.println(getIntersectNode(head1, head2).value);
+
+		// 1->2->3->4->5->6->7->4...
+		head1 = new Node(1);
+		head1.next = new Node(2);
+		head1.next.next = new Node(3);
+		head1.next.next.next = new Node(4);
+		head1.next.next.next.next = new Node(5);
+		head1.next.next.next.next.next = new Node(6);
+		head1.next.next.next.next.next.next = new Node(7);
+		head1.next.next.next.next.next.next = head1.next.next.next; // 7->4
+
+		// 0->9->8->2...
+		head2 = new Node(0);
+		head2.next = new Node(9);
+		head2.next.next = new Node(8);
+		head2.next.next.next = head1.next; // 8->2
+		System.out.println(getIntersectNode(head1, head2).value);
+
+		// 0->9->8->6->4->5->6..
+		head2 = new Node(0);
+		head2.next = new Node(9);
+		head2.next.next = new Node(8);
+		head2.next.next.next = head1.next.next.next.next.next; // 8->6
+		System.out.println(getIntersectNode(head1, head2).value);
 
 	}
 
