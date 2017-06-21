@@ -1,7 +1,7 @@
 package list;
 
 /**
- * 反转部门单向链表
+ * 反转部分单向链表
  * 
  * 给定一个单向链表的头节点head,以及两个整数from和to，在单向链表上把第from个节点到第to个节点这一部分进行反转
  * 
@@ -75,8 +75,13 @@ public class reversePart {
 		head = new Node(1);
 		head.next = new Node(2);
 		head.next.next = new Node(3);
+		head.next.next.next = new Node(4);
+		head.next.next.next.next = new Node(5);
+		head.next.next.next.next.next = new Node(6);
+		head.next.next.next.next.next.next = new Node(7);
+		head.next.next.next.next.next.next.next = new Node(8);
 		printLinkedList(head);
-		head = reversePart(head, 2, 3);
+		head = reversePart(head, 3, 6);
 		printLinkedList(head);
 
 		head = new Node(1);
