@@ -10,15 +10,6 @@ import java.util.Stack;
  */
 public class Palindrome {
 
-	public static class Node {
-		public int value;
-		public Node next;
-
-		public Node(int value) {
-			this.value = value;
-		}
-	}
-
 	public boolean isPalindrome1(Node head) {
 		Stack<Node> stack = new Stack();
 		Node cur = head;

@@ -30,6 +30,31 @@ public class josephusKill {
 		return head;
 	}
 
+	public static Node josephusKill2(Node head, Integer m) {
+		if (head == null || head.next == head || m < 1) {
+			return head;
+		}
+		Node cur = head.next;
+		int tmp = 1;// 长度
+		while (cur != head) {
+			tmp++;
+			cur = cur.next;
+		}
+		tmp = getLive(tmp, m);
+		while (--tmp != 0) {
+			head = head.next;
+		}
+		head.next = head;
+		return head;
+	}
+
+	public static int getLive(int i, int m) {
+		if (i == 1) {
+			return i;
+		}
+		return (getLive(i - 1, m) + m - 1) % i + 1;
+	}
+
 	public static void printCircularList(Node head) {
 		if (head == null) {
 			return;
@@ -54,15 +79,15 @@ public class josephusKill {
 		head1 = josephusKill1(head1, 3);
 		printCircularList(head1);
 
-		// Node head2 = new Node(1);
-		// head2.next = new Node(2);
-		// head2.next.next = new Node(3);
-		// head2.next.next.next = new Node(4);
-		// head2.next.next.next.next = new Node(5);
-		// head2.next.next.next.next.next = head2;
-		// printCircularList(head2);
-		// head2 = josephusKill2(head2, 3);
-		// printCircularList(head2);
+		Node head2 = new Node(1);
+		head2.next = new Node(2);
+		head2.next.next = new Node(3);
+		head2.next.next.next = new Node(4);
+		head2.next.next.next.next = new Node(5);
+		head2.next.next.next.next.next = head2;
+		printCircularList(head2);
+		head2 = josephusKill2(head2, 3);
+		printCircularList(head2);
 
 	}
 
