@@ -25,10 +25,12 @@ public class Divide {
 		}
 		Node cur = head;
 		int i = 0;
+		// 获取链表长度
 		while (cur != null) {
 			cur = cur.next;
 			i++;
 		}
+		// 生成Node数组 遍历
 		Node[] nodeArr = new Node[i];
 		i = 0;
 		cur = head;
@@ -37,6 +39,7 @@ public class Divide {
 			cur = cur.next;
 		}
 		arrpartition(nodeArr, num);
+		// 重新连接
 		for (i = 1; i < nodeArr.length; i++) {
 			nodeArr[i - 1].next = nodeArr[i];
 		}
@@ -45,6 +48,12 @@ public class Divide {
 
 	}
 
+	/**
+	 * 改进快排调整过程
+	 * 
+	 * @param nodeArr
+	 * @param num
+	 */
 	public static void arrpartition(Node[] nodeArr, int num) {
 		if (nodeArr == null || nodeArr.length < 2) {
 			return;
@@ -70,7 +79,7 @@ public class Divide {
 	}
 
 	// 保证两类结点内部的位置关系不变
-	public static Node ListDivide2(Node head, int num) {
+	public static Node listPartition2(Node head, int num) {
 		Node sH = null; // small head
 		Node sT = null; // small tail
 		Node eH = null; // equal head
@@ -140,7 +149,7 @@ public class Divide {
 		head1.next.next.next.next.next.next = new Node(5);
 		printLinkedList(head1);
 		head1 = ListDivide(head1, 4);
-		// head1 = listPartition2(head1, 5);
+		head1 = listPartition2(head1, 5);
 		printLinkedList(head1);
 
 	}
