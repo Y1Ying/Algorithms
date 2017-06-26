@@ -20,6 +20,7 @@ public class Solution {
 		}
 	}
 
+	// 时间复杂度O(N) 空间复杂度O（N）
 	public static Node copyListWithRand1(Node head) {
 
 		if (head == null) {
@@ -41,6 +42,7 @@ public class Solution {
 		return map.get(head);
 	}
 
+	// 不使用额外数据结构
 	public static Node copyListWithRand2(Node head) {
 		if (head == null) {
 			return null;
