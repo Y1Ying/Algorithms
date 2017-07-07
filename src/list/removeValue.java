@@ -35,6 +35,7 @@ public class removeValue {
 		return head;
 	}
 
+	// 时间复杂度O（N）
 	public static Node removeValue2(Node head, int num) {
 		Stack<Node> stack = new Stack<>();
 		while (head != null) {
