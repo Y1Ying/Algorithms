@@ -13,7 +13,7 @@ public class removeValue {
 	/**
 	 * 给定头结点，和整数Num,将值为Num的节点全部删除
 	 */
-
+	// 时间复杂度O（N） 空间复杂度O（1）
 	public static Node removeValue1(Node head, int num) {
 		// 从头开始遍历，找到第一个不等于Num的节点，
 		while (head != null) {
@@ -35,7 +35,7 @@ public class removeValue {
 		return head;
 	}
 
-	// 时间复杂度O（N）
+	// 时间复杂度O（N） 空间复杂度O（N）
 	public static Node removeValue2(Node head, int num) {
 		Stack<Node> stack = new Stack<>();
 		while (head != null) {
