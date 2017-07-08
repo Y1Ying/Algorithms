@@ -15,7 +15,7 @@ public class removeValue {
 	 */
 	// 时间复杂度O（N） 空间复杂度O（1）
 	public static Node removeValue1(Node head, int num) {
-		// 从头开始遍历，找到第一个不等于Num的节点，
+		// 从头开始遍历，找到第一个不等于Num的节点，作为新的节点
 		while (head != null) {
 			if (head.value != num) {
 				break;
