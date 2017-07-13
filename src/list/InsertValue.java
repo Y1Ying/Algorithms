@@ -18,7 +18,7 @@ public class InsertValue {
 		}
 	}
 
-	public Node insertNum(Node head, int num) {
+	public static Node insertNum(Node head, int num) {
 		Node node = new Node(num);
 		if (head == null) {
 			node.next = node;
@@ -37,4 +37,35 @@ public class InsertValue {
 		node.next = cur;
 		return head.value < num ? head : node;
 	}
+
+	public static void printCircularList(Node head) {
+		if (head == null) {
+			return;
+		}
+		System.out.print("Circular List: " + head.value + " ");
+		Node cur = head.next;
+		while (cur != head) {
+			System.out.print(cur.value + " ");
+			cur = cur.next;
+		}
+		System.out.println("-> " + head.value);
+	}
+
+	public static void main(String[] args) {
+		Node head = null;
+		head = insertNum(head, 2);
+		printCircularList(head);
+		head = insertNum(head, 1);
+		printCircularList(head);
+		head = insertNum(head, 4);
+		printCircularList(head);
+		head = insertNum(head, 3);
+		printCircularList(head);
+		head = insertNum(head, 5);
+		printCircularList(head);
+		head = insertNum(head, 0);
+		printCircularList(head);
+
+	}
+
 }
