@@ -52,58 +52,58 @@ public class selectionSortNode {
 
 	public static void main(String[] args) {
 		Node head = null;
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(1);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(1);
-		head.next = new Node(2);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(2);
-		head.next = new Node(1);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(1);
-		head.next = new Node(2);
-		head.next.next = new Node(3);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(1);
-		head.next = new Node(3);
-		head.next.next = new Node(2);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(2);
-		head.next = new Node(1);
-		head.next.next = new Node(3);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(2);
-		head.next = new Node(3);
-		head.next.next = new Node(1);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(3);
-		head.next = new Node(1);
-		head.next.next = new Node(2);
-		head = selectionSort(head);
-		printLinkedList(head);
-
-		head = new Node(3);
-		head.next = new Node(2);
-		head.next.next = new Node(1);
-		head = selectionSort(head);
-		printLinkedList(head);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(1);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(1);
+		// head.next = new Node(2);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(2);
+		// head.next = new Node(1);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(1);
+		// head.next = new Node(2);
+		// head.next.next = new Node(3);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(1);
+		// head.next = new Node(3);
+		// head.next.next = new Node(2);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(2);
+		// head.next = new Node(1);
+		// head.next.next = new Node(3);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(2);
+		// head.next = new Node(3);
+		// head.next.next = new Node(1);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(3);
+		// head.next = new Node(1);
+		// head.next.next = new Node(2);
+		// head = selectionSort(head);
+		// printLinkedList(head);
+		//
+		// head = new Node(3);
+		// head.next = new Node(2);
+		// head.next.next = new Node(1);
+		// head = selectionSort(head);
+		// printLinkedList(head);
 
 		head = new Node(3);
 		head.next = new Node(1);
