@@ -27,6 +27,7 @@ public class FactorialProblem {
 		return res;
 	}
 
+	// 时间复杂度O（logN）
 	public static int zeroNum2(int num) {
 		if (num < 0) {
 			return 0;
