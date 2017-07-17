@@ -46,7 +46,12 @@ public class FactorialProblem {
 		int input;
 		for (int i = 0; i < cnt; i++) {
 			input = cin.nextInt();
-			System.out.println(zeroNum1(input));
+			System.out.println(zeroNum2(input));
 		}
+
+		int num = 1000000000;
+
+		System.out.println(zeroNum2(num));
+		System.out.println(zeroNum1(num));
 	}
 }
