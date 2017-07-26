@@ -35,6 +35,7 @@ public class InsertValue {
 		}
 		pre.next = node;
 		node.next = cur;
+		// 如果num的值比头节点的值小就返回原来头节点，如果比头节点大就返回新的节点
 		return head.value < num ? head : node;
 	}
 
