@@ -14,7 +14,7 @@ public class RelocateLinkedList {
 		}
 		Node mid = head;
 		Node right = head.next;
-		while (right.next != null || right.next.next != null) {
+		while (right.next != null && right.next.next != null) {
 			mid = mid.next;
 			right = right.next.next;
 		}
@@ -25,8 +25,8 @@ public class RelocateLinkedList {
 
 	public static void mergeLR(Node left, Node right) {
 		Node next = null;
-		while(left.next!= null){
-			next= right.next;
+		while (left.next != null) {
+			next = right.next;
 			right.next = left.next;
 			left.next = right;
 			left = right.next;
@@ -46,38 +46,38 @@ public class RelocateLinkedList {
 
 	public static void main(String[] args) {
 		Node head = null;
-		relocate(head);
-		printLinkedList(head);
+//		relocate(head);
+//		printLinkedList(head);
 
 		head = new Node(1);
-		relocate(head);
-		printLinkedList(head);
+//		relocate(head);
+//		printLinkedList(head);
 
 		head = new Node(1);
 		head.next = new Node(2);
-		relocate(head);
-		printLinkedList(head);
+//		relocate(head);
+//		printLinkedList(head);
 
 		head = new Node(1);
 		head.next = new Node(2);
 		head.next.next = new Node(3);
-		relocate(head);
-		printLinkedList(head);
+//		relocate(head);
+//		printLinkedList(head);
 
 		head = new Node(1);
 		head.next = new Node(2);
 		head.next.next = new Node(3);
 		head.next.next.next = new Node(4);
-		relocate(head);
-		printLinkedList(head);
+//		relocate(head);
+//		printLinkedList(head);
 
 		head = new Node(1);
 		head.next = new Node(2);
 		head.next.next = new Node(3);
 		head.next.next.next = new Node(4);
 		head.next.next.next.next = new Node(5);
-		relocate(head);
-		printLinkedList(head);
+//		relocate(head);
+//		printLinkedList(head);
 
 		head = new Node(1);
 		head.next = new Node(2);
@@ -95,7 +95,7 @@ public class RelocateLinkedList {
 		head.next.next.next.next = new Node(5);
 		head.next.next.next.next.next = new Node(6);
 		head.next.next.next.next.next.next = new Node(7);
-		relocate(head);
-		printLinkedList(head);
+//		relocate(head);
+//		printLinkedList(head);
 	}
 }
