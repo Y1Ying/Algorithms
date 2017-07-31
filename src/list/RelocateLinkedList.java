@@ -20,6 +20,8 @@ public class RelocateLinkedList {
 		}
 		right = mid.next;
 		mid.next = null;
+		printLinkedList(head);
+		printLinkedList(right);
 		mergeLR(head, right);
 	}
 
@@ -27,10 +29,24 @@ public class RelocateLinkedList {
 		Node next = null;
 		while (left.next != null) {
 			next = right.next;
+			System.out.println(next.value);
 			right.next = left.next;
+			
+			printLinkedList(left);
+			printLinkedList(right);
+			
 			left.next = right;
+			
+			printLinkedList(left);
+			printLinkedList(right);
 			left = right.next;
+			
+			printLinkedList(left);
+			printLinkedList(right);
 			right = next;
+			
+			printLinkedList(left);
+			printLinkedList(right);
 		}
 		left.next = right;
 	}
