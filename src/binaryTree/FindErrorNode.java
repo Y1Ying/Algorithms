@@ -24,7 +24,7 @@ public class FindErrorNode {
 				head = head.left;
 			} else {
 				head = stack.pop();
-				if (pre != null && pre.val > head.val) {
+				if (pre != null && pre.value > head.value) {
 					errs[0] = errs[0] == null ? pre : errs[0];
 					errs[1] = head;
 				}
