@@ -19,6 +19,7 @@ public class CheckBalance {
 			return level;
 		}
 		int lh = getHeight(head.left, level + 1, res);
+		// 若为不平衡树，直接退出
 		if (!res[0]) {
 			return level;
 		}
