@@ -71,4 +71,5 @@ public class MoreThanHalfNum {
 		}
 		return time > array.length / 2 ? number : 0;
 	}
+	
 }
