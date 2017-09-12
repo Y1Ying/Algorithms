@@ -28,7 +28,7 @@ public class FindFirstCommonNode {
 
 	}
 
-	public Node FindFirstCommonNodeII(Node pHead1, Node pHead2) {
+	public Node FindFirstCommonNode2(Node pHead1, Node pHead2) {
 		Node current1 = pHead1;// 链表1
 		Node current2 = pHead2;// 链表2
 		if (pHead1 == null || pHead2 == null)
@@ -76,5 +76,25 @@ public class FindFirstCommonNode {
 			current = current.next;
 		}
 		return length;
+	}
+
+	/**
+	 * 长度相同有公共结点，第一次就遍历到；没有公共结点，走到尾部NULL相遇，返回NULL
+	 * 长度不同有公共结点，第一遍差值就出来了，第二遍一起到公共结点；没有公共，一起到结尾NULL。
+	 * 
+	 * @param pHead1
+	 * @param pHead2
+	 * @return
+	 */
+	public Node FindFirstCommonNode3(Node pHead1, Node pHead2) {
+		Node cur1 = pHead1;
+		Node cur2 = pHead2;
+
+		while (cur1 != cur2) {
+			cur1 = cur1 == null ? pHead2 : cur1.next;
+			cur2 = cur2 == null ? pHead1 : cur2.next;
+		}
+		return cur1;
+
 	}
 }
