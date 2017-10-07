@@ -33,6 +33,25 @@ public class MergeTwoList {
 		return head;
 	}
 
+	public Node Merge(Node list1, Node list2) {
+		if (list1 == null) {
+			return list2;
+		} else if (list2 == null) {
+			return list1;
+		}
+
+		Node cur = null;
+		if (list1.value < list2.value) {
+			cur = list1;
+			cur.next = Merge(list1.next, list2);
+		} else {
+			cur = list2;
+			cur.next = Merge(list1, list2.next);
+		}
+
+		return cur;
+	}
+
 	public static void printLinkedList(Node head) {
 		System.out.print("Linked List: ");
 		while (head != null) {
