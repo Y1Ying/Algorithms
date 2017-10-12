@@ -6,6 +6,12 @@ import java.util.Queue;
 
 import binaryTree.PrintEdgeNodes.Node;
 
+/**
+ * 从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行。
+ * 
+ * @author dell
+ *
+ */
 public class Print {
 
 	public static ArrayList<ArrayList<Integer>> Print(Node pRoot) {
