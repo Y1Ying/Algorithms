@@ -29,6 +29,30 @@ public class rotateWord {
 		}
 	}
 
+	public String ReverseSentence(String str) {
+		if (str == null) {
+			return null;
+		}
+		char[] chas = str.toCharArray();
+		reverse(chas, 0, chas.length - 1); // 先整体翻转
+		int start = 0, end = 0;
+		int index = 0;
+		while (index < chas.length) {
+			while (index < chas.length && chas[index] == ' ') // 空格跳过
+				index++;
+			end = index;
+			start = index; // 记录单词的第一个字符的位置
+			while (index < chas.length && chas[index] != ' ') // 不是空格
+																// 找单词最后一个字符的位置
+			{
+				index++;
+				end++;
+			}
+			reverse(chas, start, end - 1); // 局部翻转
+		}
+		return String.valueOf(chas);
+	}
+
 	public static void reverse(char[] a, int start, int end) {
 		char temp = 0;
 		while (start < end) {
