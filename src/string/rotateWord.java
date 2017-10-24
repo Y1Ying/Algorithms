@@ -64,11 +64,11 @@ public class rotateWord {
 		}
 	}
 
-	public String reverseSentence(String A, int n) {
+	public static String reverseSentence(String A) {
 		int lo = 0, hi = 0;
 		char[] cs = A.toCharArray();
-		reverse(cs, 0, n - 1);
-		for (int i = 0; i < n; i++) {
+		reverse(cs, 0, A.length() - 1);
+		for (int i = 0; i < A.length(); i++) {
 			if (cs[i] == ' ') {
 				reverse(cs, lo, hi - 1);
 				hi++;
@@ -92,6 +92,10 @@ public class rotateWord {
 		reverse(chas, 0, size - 1);
 		reverse(chas, size, chas.length - 1);
 		reverse(chas, 0, chas.length - 1);
+	}
+
+	public static void main(String[] args) {
+		System.out.println(reverseSentence("Hello World"));
 	}
 
 }
